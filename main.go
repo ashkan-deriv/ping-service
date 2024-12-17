@@ -14,6 +14,7 @@ func main() {
 }
 
 func handlePing(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set("Content-Type", "application/json")
         w.WriteHeader(http.StatusOK)
-        w.Write([]byte("pong"))
+        w.Write([]byte(`{"message":"pong"}`))
 }
